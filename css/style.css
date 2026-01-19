@@ -34,15 +34,15 @@ body {
   z-index: 1000;
 }
 
-}
 
 
 .header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 18px 20px;
+  justify-content: space-between;
+  min-height: 80px;
 }
+
 
 .brand {
   display: flex;
@@ -109,22 +109,20 @@ body {
 
 
 .hero {
-  min-height: 100vh;          /* FULL layar */
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("../assets/hero.jpg") center center / cover no-repeat;
+
+  min-height: 100vh;     /* FULL layar */
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  background-image:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../assets/hero.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  color: #fff;
   text-align: center;
+  color: #fff;
 }
+
 
 /* HERO ANIMATION */
 .hero h2 {
@@ -377,14 +375,19 @@ body {
 
 @media (max-width: 768px) {
   .header .container {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;   /* ❗ JANGAN column */
   }
 
   .nav {
-    display: flex;
-    gap: 16px;
+    gap: 14px;
+    font-size: 14px;
   }
+
+  .logo-text {
+    font-size: 20px;
+  }
+}
+
 
   .hero {
     padding: 80px 20px;
@@ -403,9 +406,10 @@ body {
   }
 
   .logo-img {
-    width: 120px;
-    height: 120px;
-  }
+  width: 60px;
+  height: 60px;
+}
+
 }
 /* =====================
    CONTACT SECTION
