@@ -9,56 +9,62 @@
  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
-<!-- FLOATING WHATSAPP -->
- 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/6281381602903?text=Halo%20Phoenix%20Automotive,%20saya%20ingin%20booking%20service"
-   target="_blank"
-   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600
-          text-white w-14 h-14 rounded-full flex items-center
-          justify-center shadow-lg text-3xl z-50">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
 
 
 
 <body class="font-sans scroll-smooth">
 
 <!-- NAVBAR -->
-<header class="bg-white shadow">
+<header class="bg-white shadow fixed top-0 w-full z-40">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    
-    <!-- Logo -->
+
+    <!-- LOGO -->
     <div class="flex items-center gap-3">
-  <img src="assets/logo.png"
-       alt="Phoenix Automotive Logo"
-       class="w-12 h-12 object-contain rounded-xl" />
+      <img src="assets/logo.png" class="w-10 h-10 object-contain" />
+      <div>
+        <h1 class="font-bold text-lg">Phoenix Automotive</h1>
+        <p class="text-sm text-gray-500">Professional Service</p>
+      </div>
+    </div>
 
-  <div>
-    <h1 class="font-bold text-lg">Phoenix Automotive</h1>
-    <p class="text-sm text-gray-500">Professional Service</p>
+    <!-- NAV DESKTOP -->
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+      <a href="#home">Home</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <!-- BOOKING BUTTON DESKTOP -->
+    <a href="https://wa.me/6281234567890"
+       class="hidden md:inline-block bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold">
+      Booking Service
+    </a>
+
+    <!-- HAMBURGER BUTTON -->
+    <button id="menuBtn" class="md:hidden text-3xl">
+      ☰
+    </button>
   </div>
-</div>
 
+  <!-- MENU MOBILE -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg">
+    <nav class="flex flex-col p-6 gap-4 font-medium text-gray-700">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#layanan" onclick="toggleMenu()">Layanan</a>
+      <a href="#tentang" onclick="toggleMenu()">Tentang Kami</a>
+      <a href="#galeri" onclick="toggleMenu()">Galeri</a>
+      <a href="#kontak" onclick="toggleMenu()">Kontak</a>
 
-    <!-- Menu -->
-   <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
-  <a href="#home" class="hover:text-blue-700">Home</a>
-  <a href="#layanan" class="hover:text-blue-700">Layanan</a>
-  <a href="#tentang" class="hover:text-blue-700">Tentang Kami</a>
-  <a href="#galeri" class="hover:text-blue-700">Galeri</a>
-  <a href="#kontak" class="hover:text-blue-700">Kontak</a>
-</nav>
-
-
-    <!-- Button -->
-   <a href="https://wa.me/6281381602903" target="_blank"
- class="bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-800">
- Booking Service
-</a>
-
+      <a href="https://wa.me/6281234567890"
+         class="mt-4 bg-blue-700 text-white text-center py-3 rounded-xl">
+        Booking Service
+      </a>
+    </nav>
   </div>
 </header>
+
 
 <!-- HERO SECTION -->
 <section id="home" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white">
@@ -101,8 +107,19 @@
   </div>
 </section>
 
-</body>
-</html>
+    <!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/6281381602903?text=Halo%20Phoenix%20Automotive,%20saya%20ingin%20booking%20service"
+   target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600
+          text-white w-14 h-14 rounded-full flex items-center
+          justify-center shadow-lg text-3xl z-50">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+
+
+
 
 <!-- LAYANAN -->
 <section id="layanan" class="bg-gray-100 py-20">
@@ -327,6 +344,22 @@
     © 2026 Phoenix Automotive. All Rights Reserved.
   </div>
 </footer>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  if (menuBtn) {
+    menuBtn.addEventListener("click", toggleMenu);
+  }
+</script>
+
+</body>
+</html>
 
 
 
